@@ -1,7 +1,7 @@
 Facebook SDK for PHP5.3
 =======================
 
-[![Latest Stable Version](http://img.shields.io/packagist/v/facebook/php-sdk-v4.svg)](https://packagist.org/packages/facebook/php-sdk-v4)
+[![Latest Stable Version](http://img.shields.io/packagist/v/sleepwalker/facebook-php-sdk-v4.svg)](https://packagist.org/packages/sleepwalker/facebook-php-sdk-v4)
 
 
 This repository contains the open source Facebook PHP SDK V4 that allows you to access Facebook
