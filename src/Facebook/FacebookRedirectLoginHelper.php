@@ -138,12 +138,13 @@ class FacebookRedirectLoginHelper
           FacebookSession::_getTargetAppSecret($this->appSecret),
         'code' => $this->getCode()
       );
-      $response = (new FacebookRequest(
+      $request = new FacebookRequest(
         FacebookSession::newAppSession($this->appId, $this->appSecret),
         'GET',
         '/oauth/access_token',
         $params
-      ))->execute()->getResponse();
+      );
+      $response = $request->execute()->getResponse();
       if (isset($response['access_token'])) {
         return new FacebookSession($response['access_token']);
       }
@@ -184,7 +185,7 @@ class FacebookRedirectLoginHelper
   protected function storeState($state)
   {
     if ($this->checkForSessionStatus === true
-      && session_status() !== PHP_SESSION_ACTIVE) {
+      && !is_session_started()) {
       throw new FacebookSDKException(
         'Session not active, could not store state.', 720
       );
@@ -204,7 +205,7 @@ class FacebookRedirectLoginHelper
   protected function loadState()
   {
     if ($this->checkForSessionStatus === true
-      && session_status() !== PHP_SESSION_ACTIVE) {
+      && !is_session_started()) {
       throw new FacebookSDKException(
         'Session not active, could not load state.', 721
       );
@@ -224,4 +225,20 @@ class FacebookRedirectLoginHelper
     $this->checkForSessionStatus = false;
   }
 
+}
+
+/**
+ * Universal function for checking session status.
+ * @return bool
+ */
+function is_session_started()
+{
+    if ( php_sapi_name() !== 'cli' ) {
+        if ( version_compare(phpversion(), '5.4.0', '>=') ) {
+            return session_status() === PHP_SESSION_ACTIVE ? TRUE : FALSE;
+        } else {
+            return session_id() === '' ? FALSE : TRUE;
+        }
+    }
+    return FALSE;
 }

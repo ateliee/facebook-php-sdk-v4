@@ -1,11 +1,14 @@
-Facebook SDK for PHP
-====================
+Facebook SDK for PHP5.3
+=======================
 
 [![Latest Stable Version](http://img.shields.io/packagist/v/facebook/php-sdk-v4.svg)](https://packagist.org/packages/facebook/php-sdk-v4)
 
 
-This repository contains the open source PHP SDK that allows you to access Facebook
-Platform from your PHP app.
+This repository contains the open source Facebook PHP SDK V4 that allows you to access Facebook
+Platform from your PHP5.3 app.
+
+This repository is modified version of (official repository)[https://github.com/facebook/facebook-php-sdk-v4] 
+so that it supports PHP5.3 and probably PHP5.2.
 
 
 Usage

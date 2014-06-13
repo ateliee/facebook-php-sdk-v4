@@ -1,9 +1,9 @@
 {
-    "name": "facebook/php-sdk-v4",
-    "description": "Facebook SDK for PHP",
-    "keywords": ["facebook", "sdk"],
+    "name": "sleepwalker/facebook-php-sdk-v4",
+    "description": "Facebook SDK v4 for PHP5.3",
+    "keywords": ["facebook", "sdk", "php5.3"],
     "type": "library",
-    "homepage": "https://github.com/facebook/facebook-php-sdk-v4",
+    "homepage": "https://github.com/sleepwalker/facebook-php-sdk-v4",
     "license": "Facebook Platform",
     "authors": [
         {
@@ -12,7 +12,7 @@
         }
     ],
     "require": {
-        "php": ">=5.4.0"
+        "php": ">=5.2.0"
     },
     "require-dev": {
         "phpunit/phpunit": "3.7.*",
